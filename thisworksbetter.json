@@ -1,0 +1,199 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "sete tecnologia",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SeteIntent",
+                    "slots": [
+                        {
+                            "name": "cod",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "código {cod}",
+                                "é {cod}",
+                                "{cod}"
+                            ]
+                        },
+                        {
+                            "name": "data",
+                            "type": "dataHandler",
+                            "samples": [
+                                "eu quero dado {data}",
+                                "quero dado {data}",
+                                "eu quero {data}",
+                                "dado {data}",
+                                "quero {data}",
+                                "{data}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "dados do cliente {cod}",
+                        "dados cliente {cod}",
+                        "cliente {data}",
+                        "dados"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "dataHandler",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "FONE",
+                                "synonyms": [
+                                    "número",
+                                    "número de celular",
+                                    "número de telefone",
+                                    "celular",
+                                    "telefone"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CNPJ",
+                                "synonyms": [
+                                    "C N P J"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NOME",
+                                "synonyms": [
+                                    "nome empresa",
+                                    "empresa nome",
+                                    "nome da empresa"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CODFIGURA",
+                                "synonyms": [
+                                    "tipo de figura",
+                                    "tipo figura",
+                                    "figura",
+                                    "codigo figura"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "TIPOPARCEIRO",
+                                "synonyms": [
+                                    "tipo parceiro",
+                                    "parceiro",
+                                    "tipo de parceiro"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "TIPOFJ",
+                                "synonyms": [
+                                    "efe jota",
+                                    "fj",
+                                    "tipo fj"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "SeteIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "cod",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.64984586230.301717747587",
+                                "elicitation": "Elicit.Slot.900739351373.1428496378186"
+                            }
+                        },
+                        {
+                            "name": "data",
+                            "type": "dataHandler",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.64984586230.951514030053",
+                                "elicitation": "Elicit.Slot.64984586230.951514030053"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Slot.64984586230.301717747587",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "O código desejado é {cod} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.64984586230.951514030053",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Que dado você deseja?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.64984586230.951514030053",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "O dado que você deseja é {data} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.900739351373.1428496378186",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Qual é o código?"
+                    }
+                ]
+            }
+        ]
+    }
+}
